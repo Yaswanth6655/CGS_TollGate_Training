@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Game</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="shortcut icon" href="./assests/download.png" type="image/x-icon">
     <style>
         .card {
             margin-bottom: 20px;
@@ -21,10 +22,23 @@
         #finish-voting {
             margin-top: 40px;
         }
+        #winner {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .container-fluid{
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./assests/indian\ flag.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <h1 class="text-center">Election Game</h1>
         <div class="row justify-content-center">
             <div class="col-md-3">
@@ -34,8 +48,8 @@
                           <img src="./assests/download (3).jpeg" alt="tdp" class="" width="100%">
                         </div>
                         <h5 class="card-title">TDP</h5>
-                        <p class="card-text">Votes: <span id="ysrcp-votes">0</span></p>
-                        <button class="btn btn-primary vote-button" id="vote-ysrcp">Vote for YSRCP</button>
+                        <p class="card-text">Votes: <span id="tdp-votes">0</span></p>
+                        <button class="btn btn-primary vote-button" id="vote-tdp">Vote for TDP</button>
                     </div>
                 </div>
             </div>
@@ -47,8 +61,8 @@
                             
                         </div>
                         <h5 class="card-title">YSRCP</h5>
-                        <p class="card-text">Votes: <span id="tdp-votes">0</span></p>
-                        <button class="btn btn-primary vote-button" id="vote-tdp">Vote for TDP</button>
+                        <p class="card-text">Votes: <span id="ysrcp-votes">0</span></p>
+                        <button class="btn btn-primary vote-button" id="vote-ysrcp">Vote for YSRCP</button>
                     </div>
                 </div>
             </div>
@@ -81,7 +95,10 @@
         </div>
         <div class="text-center">
             <button class="btn btn-success" id="finish-voting">Finish Voting</button>
+            <div id="winner"></div>
         </div>
     </div>
+    <script src="./main.js"></script>
 </body>
 </html>
+
