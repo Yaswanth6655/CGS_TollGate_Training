@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Game</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <style>
+        .card {
+            margin-bottom: 20px;
+        }
+        .party-logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px auto;
+        }
+        .vote-button {
+            margin-top: 20px;
+        }
+        #finish-voting {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Election Game</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="party-logo d-flex">
+                          <img src="./assests/download (3).jpeg" alt="tdp" class="" width="100%">
+                        </div>
+                        <h5 class="card-title">TDP</h5>
+                        <p class="card-text">Votes: <span id="ysrcp-votes">0</span></p>
+                        <button class="btn btn-primary vote-button" id="vote-ysrcp">Vote for YSRCP</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="party-logo d-flex">
+                            <img src="./assests/OIP (1).jpeg" alt="" width="100%" >
+                            
+                        </div>
+                        <h5 class="card-title">YSRCP</h5>
+                        <p class="card-text">Votes: <span id="tdp-votes">0</span></p>
+                        <button class="btn btn-primary vote-button" id="vote-tdp">Vote for TDP</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="party-logo d-flex">
+                            <img src="./assests/Indian_National_Congress_hand_logo.png" alt="" width="100%" >
+                            
+                        </div>
+                        <h5 class="card-title">Congress</h5>
+                        <p class="card-text">Votes: <span id="congress-votes">0</span></p>
+                        <button class="btn btn-primary vote-button" id="vote-congress">Vote for Congress</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="party-logo d-flex">
+                            <img src="./assests/jana sena.jpeg" alt="" width="100%" >
+                            
+                        </div>
+                        <h5 class="card-title">Jana Sena</h5>
+                        <p class="card-text">Votes: <span id="janasena-votes">0</span></p>
+                        <button class="btn btn-primary vote-button" id="vote-janasena">Vote for Jana Sena</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-success" id="finish-voting">Finish Voting</button>
+        </div>
+    </div>
+</body>
+</html>
