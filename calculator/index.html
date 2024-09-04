@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #888;
+            background-image: url("./assests/download\ \(78\).jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .calculator-screen {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;
+            text-align: right;
+            padding-right: 10px;
+            padding-left: 10px;
+            font-size: 1.5rem;
+        }
+        .calculator-keys button {
+            width: 22%;
+            height: 60px;
+            margin: 1%;
+            border-radius: 47%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="calculator card">
+    <input type="text" class="calculator-screen form-control" value="" disabled />
+
+    <div class="calculator-keys">
+        <button type="button" class="btn btn-light">7</button>
+        <button type="button" class="btn btn-light">8</button>
+        <button type="button" class="btn btn-light">9</button>
+        <button type="button" class="btn btn-info">/</button>
+
+        <button type="button" class="btn btn-light">4</button>
+        <button type="button" class="btn btn-light">5</button>
+        <button type="button" class="btn btn-light">6</button>
+        <button type="button" class="btn btn-info">*</button>
+
+        <button type="button" class="btn btn-light">1</button>
+        <button type="button" class="btn btn-light">2</button>
+        <button type="button" class="btn btn-light">3</button>
+        <button type="button" class="btn btn-info">-</button>
+
+        <button type="button" class="btn btn-light">0</button>
+        <button type="button" class="btn btn-light">.</button>
+        <button type="button" class="btn btn-light">C</button>
+        <button type="button" class="btn btn-info">+</button>
+
+        <button type="button" class="btn btn-info">(</button>
+        <button type="button" class="btn btn-info">)</button>
+
+
+
+        
+
+        <button type="button" class="btn btn-light">%</button>
+
+
+        <button type="button" class="btn btn-success btn-block">=</button>
+    </div>
+</div>
+<script src="./main.js"></script>
+</body>
+</html>
