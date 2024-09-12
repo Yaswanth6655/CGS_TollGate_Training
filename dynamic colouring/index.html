@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Background Color</title>
+    <link href="./bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            transition: background-color 0.5s ease;
+        }
+        .container {
+            margin-top: 100px;
+            min-height: 70px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Change Background Color</h1>
+        <p>Select a color to change the background:</p>
+        <input type="color" id="colorPicker" class="form-control form-control-lg" value="#ffffff">
+        <button class="btn btn-primary mt-3" onclick="changeBackgroundColor()">Apply Color</button>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
