@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+      }
+      .form-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+      }
+      .form-container button {
+        padding: 10px;
+        width: 100%;
+        background-color: #1a73e8;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      #error, #success {
+        font-weight: bold;
+        text-align: center;
+      }
+      #error {
+        color: red;
+      }
+      #success {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Create Account</h2>
+      <form id="createAccountForm">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <div>
+          <label>
+            <input type="radio" name="role" value="customer" required /> Customer
+          </label>
+          <label>
+            <input type="radio" name="role" value="vendor" required /> Vendor
+          </label>
+        </div>
+        <button type="submit">Create Account</button>
+      </form>
+      <div id="error"></div>
+      <div id="success"></div>
+    </div>
+
+    <script>
+      const form = document.getElementById("createAccountForm");
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+      const roleInputs = document.getElementsByName("role");
+      const errorDiv = document.getElementById("error");
+      const successDiv = document.getElementById("success");
+
+      // Retrieve users from localStorage (or return an empty array if none exist)
+      function getUsersFromStorage() {
+        const users = localStorage.getItem("users");
+        return users ? JSON.parse(users) : [];
+      }
+
+      // Save new users to localStorage
+      function saveUsersToStorage(users) {
+        localStorage.setItem("users", JSON.stringify(users));
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const email = emailInput.value;
+        const password = passwordInput.value;
+        let selectedRole = "";
+
+        // Get selected role from radio buttons
+        for (const input of roleInputs) {
+          if (input.checked) {
+            selectedRole = input.value;
+            break;
+          }
+        }
+
+        if (!selectedRole) {
+          errorDiv.textContent = "Please select a role.";
+          return;
+        }
+
+        // Fetch current users from localStorage
+        const users = getUsersFromStorage('data.json');
+
+        // Check if user already exists
+        const existingUser = users.find((user) => user.email === email);
+
+        if (existingUser) {
+          errorDiv.textContent = "User already exists!";
+          successDiv.textContent = "";
+        } else {
+          // Add new user to the array
+          const newUser = { email, password, role: selectedRole };
+          users.push(newUser);
+
+          // Save updated users array to localStorage
+          saveUsersToStorage(users);
+
+          successDiv.textContent = "Account created successfully!";
+          errorDiv.textContent = "";
+
+          // Clear the form
+          form.reset();
+        }
+      });
+    </script>
+  </body>
+</html>

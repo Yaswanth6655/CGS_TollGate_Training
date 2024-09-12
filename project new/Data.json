@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "email": "vendor1@example.com",
+      "password": "vendorpass1",
+      "role": "vendor",
+      "name": "suresh"
+    },
+    {
+      "email": "vendor2@example.com",
+      "password": "vendorpass2",
+      "role": "vendor",
+      "name": "yaswanth"
+    },
+    {
+      "email": "vendor3@example.com",
+      "password": "vendorpass4",
+      "role": "vendor",
+      "name": "sai kirshna"
+    },
+    {
+      "email": "customer1@example.com",
+      "password": "customerpass1",
+      "role": "customer",
+      "name": "karthik"
+    },
+    {
+      "email": "customer2@example.com",
+      "password": "customerpass2",
+      "role": "customer",
+      "name": "lokesh"
+    },
+    {
+      "email": "customer3@example.com",
+      "password": "customerpass3",
+      "role": "customer",
+      "name": "harsha"
+    }
+
+  ]
+}
+
+  

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile</title>
+  <link href="./bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>User Profile</h1>
+    <p><strong>Name:</strong> <span id="profileName"></span></p>
+    <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+    <p><strong>Role:</strong> <span id="profileRole"></span></p>
+    <button id="logoutBtn" class="btn btn-danger">Logout</button>
+  </div>
+
+  <script>
+    // Display the user profile from localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+      const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+      if (loggedInUser) {
+        document.getElementById("profileName").textContent = loggedInUser.name;
+        document.getElementById("profileEmail").textContent = loggedInUser.email;
+        document.getElementById("profileRole").textContent = loggedInUser.role;
+      }
+    });
+
+    // Logout button functionality
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser"); // Clear the stored user data
+      window.location.href = "login2.html"; // Redirect back to login page
+    });
+  </script>
+</body>
+</html>
