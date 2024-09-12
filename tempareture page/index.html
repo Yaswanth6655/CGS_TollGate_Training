@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link href="./bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 20px;
+      background-color: #f8f9fa;
+      background-image: url(./images/istockphoto-1753896074-612x612.webp);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .container {
+      max-width: 800px;
+      height: 90vh;
+      margin: auto;
+      padding: 20px;
+      background: transparent;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+      color: #f8f9fa;
+
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Temperature Converter</h1>
+    <form>
+      <div class="mb-3">
+        <label for="tempInput" class="form-label">Enter Temperature</label>
+        <input type="number" class="form-control" id="tempInput" placeholder="Enter a value">
+      </div>
+      <div class="mb-3">
+        <label for="unitInput" class="form-label">Select Unit</label>
+        <select class="form-select" id="unitInput">
+          <option value="celsius">Celsius</option>
+          <option value="fahrenheit">Fahrenheit</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-primary" onclick="convertTemp()">Convert</button>
+    </form>
+
+    <hr>
+
+    <div id="result" class="mt-4">
+      <h4>Converted Temperatures:</h4>
+      <p id="celsiusResult">Celsius: -</p>
+      <p id="fahrenheitResult">Fahrenheit: -</p>
+      <p id="kelvinResult">Kelvin: -</p>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
