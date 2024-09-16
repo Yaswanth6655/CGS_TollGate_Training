@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        table input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="container my-5">
+
+    <h2 class="mb-4">Dynamic Table Generator</h2>
+
+
+    <form id="tableForm" class="form-inline mb-4">
+        <div class="form-group mr-3">
+            <label for="rows" class="mr-2">Rows:</label>
+            <input type="number" class="form-control" id="rows" min="1" required>
+        </div>
+        <div class="form-group mr-3">
+            <label for="columns" class="mr-2">Columns:</label>
+            <input type="number" class="form-control" id="columns" min="1" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Generate Table</button>
+    </form>
+
+
+    <div id="tableContainer"></div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
