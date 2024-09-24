@@ -46,7 +46,7 @@ function displayTracks(tracks) {
             </div>
         `;
 
-        // Add event listener for audio play/pause control
+        
         const audioElement = trackElement.querySelector('audio');
         audioElement.addEventListener('play', () => {
             // Pause the currently playing audio if it's different from the current one
