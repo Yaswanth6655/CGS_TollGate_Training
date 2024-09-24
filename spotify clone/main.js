@@ -1,7 +1,7 @@
 const client_id = 'd2bdc638893d4f3c9bb3bd0d5f206934';
 const client_secret = '293b83a3033d498bb96bcd181d261e00';
 let token = '';
-let currentAudio = null; // To store the currently playing audio element
+let currentAudio = null;
 
 async function fetchToken() {
     const result = await fetch('https://accounts.spotify.com/api/token', {
