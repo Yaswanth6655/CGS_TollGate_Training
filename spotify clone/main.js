@@ -49,11 +49,10 @@ function displayTracks(tracks) {
         
         const audioElement = trackElement.querySelector('audio');
         audioElement.addEventListener('play', () => {
-            // Pause the currently playing audio if it's different from the current one
             if (currentAudio && currentAudio !== audioElement) {
                 currentAudio.pause();
             }
-            currentAudio = audioElement; // Set the current audio element
+            currentAudio = audioElement;
         });
 
         resultsContainer.appendChild(trackElement);
